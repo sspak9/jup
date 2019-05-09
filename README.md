@@ -9,3 +9,9 @@ Jupyter Notebook based tutorials
 See under `keras` folder for keras based tutorials
 
 See under `cv2_dlib` folder for tutorials using simple computer vision and face detection tools
+
+If github is having issues rendering the Jupyter Notebooks, please clone the repository, open the env_setup.html, and follow the steps to setup your local instance of Jupyter Notebook
+
+You will first need to install git, if you have not already done so:
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
