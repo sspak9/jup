@@ -11,4 +11,6 @@ The recommended approach is:
 
 4) test out your model with slightly longer run of epochs. BTW, the AWS GPU instance does not provide the optimal GPU performance you would expect from a locally installed NVidia GPU on your desktop
 
+5) convert your model into SageMaker based model and run it !!!
+
 [See how to setup t2.micro instance](setup_micro.ipynb)
