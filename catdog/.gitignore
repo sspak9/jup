@@ -3,3 +3,4 @@ test
 train
 *.zip
 *.h5
+*.gz
