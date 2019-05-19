@@ -1,3 +1,5 @@
 PetImages
 test
 train
+*.zip
+*.h5
