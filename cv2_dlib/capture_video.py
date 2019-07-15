@@ -10,9 +10,9 @@ while True:
     cv2.imshow('capture window', out_image)
     
     # capture key and if return key exit
-    key = cv2.waitkey(1)
+    key = cv2.waitKey(1)
     if key == 13:
         break
 
 cap.release()
-cv2.destoryWindow('capture window')
+cv2.destroyWindow('capture window')
