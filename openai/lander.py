@@ -36,7 +36,7 @@ if __name__ == "__main__":
         action_size = env.action_space.shape[0]
     
     agent = DoubleDQNAgent(state_size, action_size, 
-        **{'memory':1000000 , 'layer1':32 , 'layer2':16})
+        **{'memory':1000000 , 'layer1':128 , 'layer2':64})
 
     consecutive_count = 0
     last_scores = deque(maxlen=MEAN_ARRAY_SIZE)
