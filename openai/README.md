@@ -39,6 +39,7 @@ You can, instead, use below to record video every 100 episodes (or whatever you 
 ```python
 env = gym.wrappers.Monitor(env, './save_video', force=True, video_callable=lambda episode_id: episode_id%100==0)
 ```
+The saved vidoes indicate that the model learns not to crash within 100 episodes, but doesn't learn how to land until way later.
 
 To use the above, you must have ffmpeg installed.  On windows, use `chocolatey install ffmpeg` as admin. On Mac, `brew install ffmpeg`
 
