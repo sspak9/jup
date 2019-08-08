@@ -25,10 +25,9 @@ To change the model layer size, modify this portion:
 I found that 128/64 reaches solution OK, while 64/32 took longer and 32/16 took looooong time...
 
 This is the plot of 100-episode-average score for 32/16 model.
-The plot basically impiles that convergence to a solution happens rather suddenly after many, many episodes
-Your run may finish sooner.
+As the two runs indicate that when you converge to a solution (at least 100 runs of score 200 or higher) happens randomly but does take at least over 1500 episodes
 
-![plot](lunarlander-v2.png)
+![plot](lunarlander-v2.png) ![plot2](run2.png)
 
 The generated models are saved into `save_lander_model` folder
 
