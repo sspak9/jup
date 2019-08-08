@@ -3,6 +3,9 @@ I am assuming that you have installed the necessary openai dependencies.
 
 Additional dependency is tensorflow: `pip install -U tensorflow` or `pip install -U tensorflow-gpu`
 
+You should also install numpy 1.16.4 and not the 1.17.0 that gets installed by default: `pip install numpy==1.16.4`
+If not, you may see tons of warning messages when running tensorflow
+
 As of today, above command will install tensorflow 1.14.0
 
 I am using DoubleDeepQAgent (see `agent.py`)
@@ -25,7 +28,7 @@ To change the model layer size, modify this portion:
 I found that 128/64 reaches solution OK, while 64/32 took longer and 32/16 took looooong time...
 
 This is the plot of 100-episode-average score for 32/16 model.
-As the two runs indicate that when you converge to a solution (at least 100 runs of score 200 or higher) happens randomly but does take at least over 1500 episodes
+As the two runs indicate that when you converge to a solution (at least 100 runs of score 200 or higher) happens randomly but does take at least over 1000 episodes
 
 ![plot](lunarlander-v2.png) ![plot2](run2.png)
 
@@ -50,6 +53,8 @@ The saved vidoes indicate that the model learns not to crash within 100 episodes
 To use the above, you must have ffmpeg installed.  On windows, use `chocolatey install ffmpeg` as admin. On Mac, `brew install ffmpeg`
 
 See https://chocolatey.org/ for details on how to install.  You may have issues, if you don't have admin rights on your Windows machine.
+
+Another option is to download the Windows stable build of ffmpeg from the official site: https://ffmpeg.zeranoe.com/builds/ , unzip it, and add the bin folder into the Windows PATH
 
 To see how the model handles the random landing scenarios, execute
 `python show.py [model]`
