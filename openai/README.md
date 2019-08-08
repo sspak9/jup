@@ -1,4 +1,10 @@
 ### Simple code to start on OpenAI gym
+I am assuming that you have installed the necessary openai dependencies.
+
+Additional dependency is tensorflow: `pip install -U tensorflow` or `pip install -U tensorflow-gpu`
+
+As of today, above command will install tensorflow 1.14.0
+
 I am using DoubleDeepQAgent (see `agent.py`)
 
 To train the model for lunar lander, run
