@@ -18,6 +18,11 @@ To change the model layer size, modify this portion:
 ```
 I found that 128/64 reaches solution OK, while 64/32 took longer and 32/16 took looooong time...
 
+This is the plot of 100-episode-average score for 32/16 model.
+The plot basically impiles that convergence to solution happens rather suddenly after many, many episodes
+
+![plot](lunarlander-v2.png)
+
 The generated models are saved into `save_lander_model` folder
 
 If you wish to see the lander training in action set this to true:
