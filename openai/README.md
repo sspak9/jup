@@ -19,7 +19,7 @@ To change the model layer size, modify this portion:
 I found that 128/64 reaches solution OK, while 64/32 took longer and 32/16 took looooong time...
 
 This is the plot of 100-episode-average score for 32/16 model.
-The plot basically impiles that convergence to solution happens rather suddenly after many, many episodes
+The plot basically impiles that convergence to a solution happens rather suddenly after many, many episodes
 
 ![plot](lunarlander-v2.png)
 
@@ -32,6 +32,17 @@ RENDER_COUNT=25 # render if consecutive count >= this
 ```
 
 This will trigger lander GUI in action if the consecutive count for reward >= 200 (`REWARD_VALUE`) is met
+However, there seems to be a bug where `env.render()` call will error out after about `1000` episodes.
+Thus, set `RENDER_FLAG=False` if you do not plan to sit in front of your computer to watch the training in action.
+
+You can, instead, use below to record video every 100 episodes (or whatever you wish)
+```python
+env = gym.wrappers.Monitor(env, './save_video', force=True, video_callable=lambda episode_id: episode_id%100==0)
+```
+
+To use the above, you must have ffmpeg installed.  On windows, use `chocolatey install ffmpeg` as admin. On Mac, `brew install ffmpeg`
+
+See https://chocolatey.org/ for details on how to install.  You may have issues, if you don't have admin rights on your Windows machine.
 
 To see how the model handles the random landing scenarios, execute
 `python show.py [model]`

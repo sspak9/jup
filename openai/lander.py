@@ -16,6 +16,7 @@ RENDER_FLAG=False
 RENDER_COUNT=25 # render if consecutive count >= this
 SAVE_MODEL_FOLDER='./save_lander_model'
 SAVE_PLOT_FOLDER='./save_plot'
+SAVE_VIDEO_FOLDER='./save_video'
 
 # helper function
 def create_dir(dir_name):
@@ -26,8 +27,12 @@ if __name__ == "__main__":
     
     create_dir(SAVE_MODEL_FOLDER)
     create_dir(SAVE_PLOT_FOLDER)
+    create_dir(SAVE_VIDEO_FOLDER)
 
     env = gym.make('LunarLander-v2')
+
+    # uncomment below if you wish to save a video every 100 episodes. requires ffmpeg
+    #env = gym.wrappers.Monitor(env, SAVE_VIDEO_FOLDER, force=True, video_callable=lambda episode_id: episode_id%100==0)
     
     state_size = env.observation_space.shape[0]
     if hasattr(env.action_space , 'n'):
