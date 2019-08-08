@@ -26,6 +26,7 @@ I found that 128/64 reaches solution OK, while 64/32 took longer and 32/16 took 
 
 This is the plot of 100-episode-average score for 32/16 model.
 The plot basically impiles that convergence to a solution happens rather suddenly after many, many episodes
+Your run may finish sooner.
 
 ![plot](lunarlander-v2.png)
 
@@ -45,7 +46,7 @@ You can, instead, use below to record video every 100 episodes (or whatever you 
 ```python
 env = gym.wrappers.Monitor(env, './save_video', force=True, video_callable=lambda episode_id: episode_id%100==0)
 ```
-The saved vidoes indicate that the model learns not to crash within 100 episodes, but doesn't learn how to land until way later.
+The saved vidoes indicate that the model learns not to crash within 100 episodes, but doesn't learn how to land safely until way later.
 
 To use the above, you must have ffmpeg installed.  On windows, use `chocolatey install ffmpeg` as admin. On Mac, `brew install ffmpeg`
 
