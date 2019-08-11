@@ -77,4 +77,4 @@ To see the model execute:
 Examples: 
 `python show.py model.h5 CartPole-v1`
 
-`python show.py mtcar_32_16.ht MountainCar-v0`
+`python show.py mtcar_32_16.h5 MountainCar-v0`
