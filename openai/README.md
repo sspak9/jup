@@ -66,9 +66,15 @@ Sample UI
 ![lander](lander.gif)
 
 
-To train cart pole, run python cartpole.py.
+To train cart pole, run `python cartpole.py`.
 The saved models are in save_cartpole_model directory
+
+To train mountain car, run `python mtcar.py`
+
 To see the model execute:
 `python show.py [model] CartPole-v1`
 
-Example: `python show.py model.h5 CartPole-v1`
+Examples: 
+`python show.py model.h5 CartPole-v1`
+
+`python show.py mtcar_32_16.ht MountainCar-v0`
