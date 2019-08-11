@@ -21,7 +21,7 @@ class DoubleDQNAgent:
     self.epsilon_decay = kwargs.get('epsilon_decay' , 0.999)
     self.epsilon_min = kwargs.get('epsilon_min' , 0.01)
     self.batch_size = kwargs.get('batch_size' , 64)
-    self.train_start = kwargs.get('discount_factor' , 1000)
+    self.train_start = kwargs.get('train_start' , 1000)
     self.layer1 = kwargs.get('layer1' , 32)
     self.layer2 = kwargs.get('layer2' , 16)
     mxlen = kwargs.get('memory' , 100000)
