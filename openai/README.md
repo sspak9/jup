@@ -71,6 +71,8 @@ The saved models are in save_cartpole_model directory
 
 To train mountain car, run `python mtcar.py`
 
+To train mountain car using Q table (way faster): `python mtcar_q.py` and to view the result: `python show_q_mtcar.py`
+
 To see the model execute:
 `python show.py [model] CartPole-v1`
 
