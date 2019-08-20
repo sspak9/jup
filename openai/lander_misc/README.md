@@ -5,7 +5,7 @@ Another reward is added if the lander succeeds in earlier steps
 
 What I found was that adding just the safe landing reward, solution is reached, but adding the addtional reward for the step results in solution never converging... don't know why
 
-You can also "re-train" existing model - basically trying to overfit the model - by executing `python lander2.py [model]`
+You can also "re-train" existing model - basically trying to overfit the model - by executing `python lander2.py [model]` in the parent folder where the agent.py is
 
 See the model in action by `python show.py model`
 
