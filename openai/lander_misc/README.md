@@ -7,6 +7,8 @@ What I found was that adding just the safe landing reward, solution is reached, 
 
 You can also "re-train" existing model - basically trying to overfit the model - by executing `python lander2.py [model]`
 
+See the model in action by `python show.py model`
+
 Like any ML training, a high training accuracy usually means not so good with generic situation.  In fact training a 512/256 model again resulted very FAST safe landing for about 90% of the time, but for 10% of the time, the lander will CRASH very fast..
 
 Probably a side effect
