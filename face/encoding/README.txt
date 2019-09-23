@@ -1,0 +1,1 @@
+This is where encodings for faces will reside in *.npy format with the file name matching the person's no_space_name
