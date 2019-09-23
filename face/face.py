@@ -19,6 +19,7 @@ import dlib
 import numpy as np
 import glob
 import os
+import sys
 
 print('cv2 version:', cv2.__version__)
 print('dlib version:',dlib.__version__)
@@ -36,6 +37,11 @@ feature_detector = dlib.shape_predictor(shape_file)
 
 face_file = 'mmod_human_face_detector.dat'
 face_detector = dlib.cnn_face_detection_model_v1(face_file)
+
+if len(sys.argv) > 1:
+  if sys.argv[1].lower().startswith('hong'):
+    face_detector = dlib.get_frontal_face_detector()
+
 
 encode_file = 'dlib_face_recognition_resnet_model_v1.dat'
 face_encoder = dlib.face_recognition_model_v1(encode_file)
@@ -83,7 +89,7 @@ while True:
             y2 = d.rect.bottom()
             
             if not is_blur:
-                cv2.rectangle(frame, (x, y), (x2, y2), (0, 255, 0), 2)
+                cv2.rectangle(frame, (x, y), (x2, y2), (0, 255, 0), 1)
             else:
                 #blur the frame
                 top = int(y*0.80)
