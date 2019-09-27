@@ -39,7 +39,7 @@ face_file = 'mmod_human_face_detector.dat'
 face_detector = dlib.cnn_face_detection_model_v1(face_file)
 
 if len(sys.argv) > 1:
-  if sys.argv[1].lower().startswith('hong'):
+  if sys.argv[1].lower().startswith('hog'):
     face_detector = dlib.get_frontal_face_detector()
 
 
