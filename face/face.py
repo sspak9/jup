@@ -38,9 +38,14 @@ feature_detector = dlib.shape_predictor(shape_file)
 face_file = 'mmod_human_face_detector.dat'
 face_detector = dlib.cnn_face_detection_model_v1(face_file)
 
+is_hog_mode=False
+
+is_hog_mode=False
 if len(sys.argv) > 1:
-  if sys.argv[1].lower().startswith('hog'):
-    face_detector = dlib.get_frontal_face_detector()
+    if sys.argv[1].lower().startswith('hog'):
+        face_detector = dlib.get_frontal_face_detector()
+        is_hog_mode=True
+        print('is hog mode')
 
 
 encode_file = 'dlib_face_recognition_resnet_model_v1.dat'
@@ -83,10 +88,16 @@ while True:
         
         # rectangles around faces
         for i, d in enumerate(dets):
-            x = d.rect.left()
-            y = d.rect.top()
-            x2 = d.rect.right()
-            y2 = d.rect.bottom()
+            if is_hog_mode:
+                x=d.left()
+                y=d.top()
+                x2=d.right()
+                y2=d.bottom()
+            else:
+                x = d.rect.left()
+                y = d.rect.top()
+                x2 = d.rect.right()
+                y2 = d.rect.bottom()
             
             if not is_blur:
                 cv2.rectangle(frame, (x, y), (x2, y2), (0, 255, 0), 1)
@@ -107,7 +118,10 @@ while True:
             
             if not is_blur:
                 #get facial features
-                coor = feature_detector(img , d.rect)
+                if is_hog_mode:
+                    coor = feature_detector(img , d)
+                else:
+                    coor = feature_detector(img , d.rect)
 
                 # must have detected the features to go foward
                 if not coor is None:
